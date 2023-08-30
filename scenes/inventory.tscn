@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=3 uid="uid://dte2tj3u461d"]
+
+[ext_resource type="Script" path="res://scripts/Inventory.gd" id="1_b56a1"]
+[ext_resource type="Texture2D" uid="uid://dqtjj0gh3xphm" path="res://data/user_interface/grid.png" id="2_2ffb8"]
+[ext_resource type="Script" path="res://scripts/EquipmentSlots.gd" id="2_pn3hn"]
+[ext_resource type="Script" path="res://scripts/GridBackPack.gd" id="4_q6a0h"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_h6sp1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mjj17"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_0dovt"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_b56a1")
+metadata/_edit_use_anchors_ = true
+
+[node name="InventoryBase" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -345.0
+offset_top = -157.0
+offset_right = 345.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_h6sp1")
+
+[node name="EquipmentSlots" type="TextureRect" parent="."]
+modulate = Color(0.188235, 0.188235, 0.188235, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 157.0
+offset_top = -129.0
+offset_right = 313.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_mjj17")
+script = ExtResource("2_pn3hn")
+
+[node name="HEAD" type="TextureRect" parent="EquipmentSlots"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.689
+anchor_top = 0.178
+anchor_right = 0.689
+anchor_bottom = 0.178
+offset_left = -33.484
+offset_top = -22.924
+offset_right = 33.516
+offset_bottom = 23.076
+texture = SubResource("CanvasTexture_0dovt")
+
+[node name="TORSO" type="TextureRect" parent="EquipmentSlots"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.689
+anchor_top = 0.469
+anchor_right = 0.689
+anchor_bottom = 0.5
+offset_left = -33.484
+offset_top = -43.002
+offset_right = 33.516
+offset_bottom = 42.998
+texture = SubResource("CanvasTexture_0dovt")
+
+[node name="SWORD" type="TextureRect" parent="EquipmentSlots"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.234
+anchor_top = 0.469
+anchor_right = 0.234
+anchor_bottom = 0.469
+offset_left = -19.504
+offset_top = -73.002
+offset_right = 19.496
+offset_bottom = 72.998
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_0dovt")
+
+[node name="LEGS" type="TextureRect" parent="EquipmentSlots"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.689
+anchor_top = 0.797
+anchor_right = 0.689
+anchor_bottom = 0.797
+offset_left = -33.484
+offset_top = -33.626
+offset_right = 33.516
+offset_bottom = 33.374
+texture = SubResource("CanvasTexture_0dovt")
+
+[node name="GridBackPack" type="TextureRect" parent="."]
+self_modulate = Color(0.207843, 0.207843, 0.207843, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -316.0
+offset_top = -128.0
+offset_right = 132.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2ffb8")
+script = ExtResource("4_q6a0h")

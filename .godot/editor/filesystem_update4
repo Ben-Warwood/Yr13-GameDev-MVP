@@ -1,0 +1,13 @@
+res://scenes/Player.tscn
+res://scenes/healthbar.tscn
+res://scenes/Main.tscn
+res://scenes/ui_master.tscn
+res://scenes/item_db.tscn
+res://scenes/item_base.tscn
+res://scenes/inventory.tscn
+res://scenes/Pause_menu.tscn
+res://scripts/Main.gd
+res://data/materials/kuwahara.tres
+res://data/shaders/kuwahara.gdshader
+res://scripts/Pause_menu.gd
+res://scripts/player_scripts/player_movement.gd
