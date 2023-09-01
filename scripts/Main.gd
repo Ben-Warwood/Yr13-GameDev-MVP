@@ -5,9 +5,8 @@ extends Node
 var player_paused : bool = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	player.pause_menu.background_shader = $"PauseShaderBackground"
 	ui_master.toggle_inventory.connect(toggle_inventory_interface)
-	
-	player.pause_menu.pause_menu_shader = $PauseMenuBackgroundShader
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,4 +25,4 @@ func toggle_inventory_interface():
 func ui_pause():
 	player_paused = !player_paused
 	player.toggle_movement(player_paused)
-	$Player/Camera_Root.camera_pause(player_paused)
+	$layer/Camera_Root.camera_pause(player_paused)

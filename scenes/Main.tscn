@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cvaxaqi8knxlq" path="res://scenes/Player.tscn" id="1"]
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_byfi0"]
-[ext_resource type="Material" uid="uid://3w8vh5b2wjbd" path="res://data/materials/kuwahara.tres" id="2_2aoda"]
+[ext_resource type="Material" uid="uid://3w8vh5b2wjbd" path="res://data/materials/kuwahara.tres" id="2_3fpd3"]
 [ext_resource type="PackedScene" path="res://scenes/door.tscn" id="9"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y3q03"]
@@ -38,9 +38,9 @@ size = Vector3(50, 1, 50)
 [node name="Main" type="Node"]
 script = ExtResource("1_byfi0")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="PauseShaderBackground" type="ColorRect" parent="."]
 visible = false
-material = ExtResource("2_2aoda")
+material = ExtResource("2_3fpd3")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

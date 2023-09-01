@@ -11,9 +11,7 @@ signal killed()
 @onready var _anim_tree = get_node(animationtree)
 @onready var _ground_check = $CollisionShape3D/GroundCheck
 @onready var _cam_root = $Camera_Root
-
-@onready var pause_menu: ColorRect = $"CanvasLayer/UI master/MarginContainer/VBoxContainer2/HBoxContainer2/PauseMenu"
-
+@onready var pause_menu = $"CanvasLayer/UI master/MarginContainer/VBoxContainer3/HBoxContainer/PauseMenu"
 var gravity = 0
 var movement = Vector3.ZERO
 var direction = Vector3.FORWARD
@@ -171,9 +169,9 @@ func Attack(delta):
 		pass
 	if Input.is_action_just_pressed("standard attack") && !is_running:
 		did_combo = true;
-		if combo_counter == 3:
+		if combo_counter == 3 && _anim_tree.get("parameters/Combo1/active") != true:
 			_anim_tree.set("parameters/Combo1/request",true);
-	if Input.is_action_just_pressed("standard attack") && is_running:
+	if Input.is_action_just_pressed("standard attack") && is_running && _anim_tree.get("parameters/SprintAttack/active") != true:
 		_anim_tree.set("parameters/SprintAttack/request", true);
 		is_running = false;
 
@@ -188,7 +186,8 @@ func attack_finish(anim_name:String):
 			_anim_tree.set("parameters/Combo3/request", true)
 		elif anim_name == ("Combo3") && combo_counter == 0:
 			combo_counter = 3
-			_anim_tree.set("parameters/Combo1/request", true);
+			_anim_tree.set("parameters/Combo1/request",true);
+			
 	else:
 		combo_counter = 3
 

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5jbgiuwv1pg3"]
+[gd_scene load_steps=5 format=3 uid="uid://b5jbgiuwv1pg3"]
 
 [ext_resource type="Script" path="res://scripts/ui_master.gd" id="1_ddsjv"]
 [ext_resource type="PackedScene" uid="uid://dtc2ko8cq218o" path="res://scenes/healthbar.tscn" id="1_h0ix3"]
 [ext_resource type="PackedScene" uid="uid://dte2tj3u461d" path="res://scenes/inventory.tscn" id="2_dugxm"]
+[ext_resource type="PackedScene" uid="uid://elcrds2lpwbe" path="res://scenes/Pause_menu.tscn" id="4_d174l"]
 
 [node name="UI master" type="Control"]
 layout_mode = 3
@@ -47,4 +48,16 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Inventory" parent="MarginContainer/VBoxContainer2/HBoxContainer2" instance=ExtResource("2_dugxm")]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="PauseMenu" parent="MarginContainer/VBoxContainer3/HBoxContainer" instance=ExtResource("4_d174l")]
 layout_mode = 2

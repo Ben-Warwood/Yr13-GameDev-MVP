@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://elcrds2lpwbe"]
+[gd_scene load_steps=11 format=3 uid="uid://elcrds2lpwbe"]
 
 [ext_resource type="Shader" path="res://data/shaders/kuwahara.gdshader" id="1_5avjt"]
 [ext_resource type="Script" path="res://scripts/Pause_menu.gd" id="2_ead5w"]
+[ext_resource type="Theme" uid="uid://dsdrolxosbcvr" path="res://data/user_interface/themes/Pause_theme.tres" id="2_vxmvs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f0sn0"]
 shader = ExtResource("1_5avjt")
@@ -223,7 +224,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_vxmvs")
 script = ExtResource("2_ead5w")
+button_height = 88.0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 process_mode = 3
@@ -232,12 +235,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 440.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
-custom_minimum_size = Vector2(512, 256)
+custom_minimum_size = Vector2(200, 600)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
 layout_mode = 2
@@ -250,23 +256,88 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 0
 text = "Pause"
 horizontal_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator3" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
+size_flags_vertical = 4
 
 [node name="ResumeButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 process_mode = 3
+custom_minimum_size = Vector2(480, 0)
+layout_direction = 2
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 3
 shortcut = SubResource("Shortcut_5t8pf")
 shortcut_in_tooltip = false
 text = "Resume"
+icon_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Save" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(480, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+shortcut_in_tooltip = false
+text = "Save
+"
+icon_alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Load" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(480, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+shortcut_in_tooltip = false
+text = "Load
+"
+icon_alignment = 1
+
+[node name="HSeparator5" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Options" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(480, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+shortcut_in_tooltip = false
+text = "Options
+"
+icon_alignment = 1
+
+[node name="HSeparator6" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
 
 [node name="QuitButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 process_mode = 3
+custom_minimum_size = Vector2(480, 0)
 layout_mode = 2
+size_flags_horizontal = 0
 size_flags_vertical = 3
 text = "Quit"
 
